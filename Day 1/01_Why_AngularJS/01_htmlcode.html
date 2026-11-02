@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Application</title>
+</head>
+
+<body>
+    <input type="text" id="studentName">
+    <h2 id="output"></h2>
+    <script>
+        document.getElementById("studentName")
+            .addEventListener("input", function () {
+                document.getElementById("output").innerHTML = this.value;
+            });
+    </script>
+</body>
+
+</html>

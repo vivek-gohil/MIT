@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AngularJS Calculator</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+</head>
+
+<body ng-app>
+
+    <h2>AngularJS Calculator</h2>
+
+    Number 1:
+    <input type="number" ng-model="num1">
+
+    <br><br>
+
+    Number 2:
+    <input type="number" ng-model="num2">
+
+    <hr>
+
+    <div ng-if="num1 != null && num2 != null">
+
+        <h3>Addition: {{num1 + num2}}</h3>
+        <h3>Subtraction: {{num1 - num2}}</h3>
+        <h3>Multiplication: {{num1 * num2}}</h3>
+
+        <h3 ng-if="num2 != 0">
+            Division: {{num1 / num2}}
+        </h3>
+
+        <p ng-if="num2 == 0">
+            Cannot divide by zero.
+        </p>
+
+    </div>
+
+    <button type="button"
+            ng-click="num1 = null; num2 = null">
+        Clear
+    </button>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app>
+        <input type="text" ng-model="studentName">
+        <h2 ng-bind="studentName"></h2>
+    </div>
+
+    <!-- Above code is equivalent to  -->
+    <!-- <div ng-app>
+    <input type="text" ng-model="studentName">
+    <h2>{{studentName}}</h2>
+    </div> -->
+</body>
+
+</html>
