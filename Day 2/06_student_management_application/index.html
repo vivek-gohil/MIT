@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Student Management System</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+
+    <script src="app.js"></script>
+
+</head>
+
+<body ng-app="studentApp">
+
+    <div ng-controller="StudentController">
+        <h1>{{title}}</h1>
+        <hr>
+        <h3>Total Students: {{students.length}}</h3>
+        Search Student:
+        <input type="text" ng-model="searchText" placeholder="Enter student name">
+        <br><br>
+        <button ng-click="showStudents = !showStudents">
+            Show / Hide Students
+        </button>
+        <br><br>
+        <table border="1" cellpadding="10" ng-if="showStudents">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>City</th>
+                <th>Marks</th>
+            </tr>
+            <tr ng-repeat="student in students | filter:searchText | orderBy:'name'">
+                <td>{{student.id}}</td>
+                <td>{{student.name | uppercase}}</td>
+                <td>{{student.age}}</td>
+                <td>{{student.city}}</td>
+                <td>
+                    <span ng-if="student.marks >= 40" style="color:green">
+                        {{student.marks}}
+                    </span>
+                    <span ng-if="student.marks < 40" style="color:red">
+                        {{student.marks}}
+                    </span>
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>

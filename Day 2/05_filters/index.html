@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AngularJS Controller</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="EmployeeController">
+        <h3>1. Uppercase Filter</h3>
+        <p>{{"angularjs training" | uppercase}}</p>
+
+        <h3>2. Lowercase Filter</h3>
+        <p>{{"ANGULARJS TRAINING" | lowercase}}</p>
+
+        <h3>3. Currency Filter</h3>
+        <p>Default Currency: {{65000 | currency}}</p>
+        <p>Indian Currency: {{65000 | currency:"₹"}}</p>
+        <p>Salary: {{65000 | currency:"₹":0}}</p>
+
+        <h3>4. Number Filter</h3>
+        <p>Original: {{price}}</p>
+        <p>Two Decimal Places: {{price | number:2}}</p>
+        <p>No Decimal Places: {{price | number:0}}</p>
+
+        <h3>5. Date Filter</h3>
+        <p>Default Date: {{today | date}}</p>
+        <p>Indian Format: {{today | date:'dd-MM-yyyy'}}</p>
+        <p>Year First: {{today | date:'yyyy-MM-dd'}}</p>
+        <p>Month Name: {{today | date:'dd-MMM-yyyy'}}</p>
+        <p>Full Date: {{today | date:'fullDate'}}</p>
+
+        <h3>6. OrderBy Filter</h3>
+        <h4>Employees Sorted by Name (Ascending)</h4>
+        <ul>
+            <li ng-repeat="emp in employees | orderBy:'name'">
+                {{emp.name}}
+            </li>
+        </ul>
+        <h4>Employees Sorted by Salary (Descending)</h4>
+        <ul>
+            <li ng-repeat="emp in employees | orderBy:'salary':true">
+                {{emp.name}} - {{emp.salary}}
+            </li>
+        </ul>
+
+        <h3>7. Filter Filter</h3>
+        <input type="text" ng-model="searchText" placeholder="Search employees">
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Department</th>
+                <th>Salary</th>
+            </tr>
+            <tr ng-repeat="emp in employees | filter:searchText">
+                <td>{{emp.id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.city}}</td>
+                <td>{{emp.department}}</td>
+                <td>{{emp.salary}}</td>
+
+            </tr>
+        </table>
+
+        <h3>8. LimitTo Filter</h3>
+        <h4>First Three Employees</h4>
+        <ul>
+            <li ng-repeat="emp in employees | limitTo:3">
+                {{emp.name}}
+            </li>
+        </ul>
+
+        <label>Number of Employees:</label>
+
+        <select ng-model="limit">
+
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="6">6</option>
+        </select>
+        <ul>
+            <li ng-repeat="emp in employees | limitTo:limit">
+                {{emp.name}}
+            </li>
+        </ul>
+
+        <h3>9. JSON Filter</h3>
+        <pre>{{employees[0] | json}}</pre>
+    </div>
+</body>
+
+</html>

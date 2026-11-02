@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AngularJS Controller</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        .pass {
+            color: green;
+        }
+
+        .fail {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="StudentController">
+        <h2 ng-class="marks >= 40 ? 'pass' : 'fail'">
+            Marks: {{marks}}
+        </h2>
+    </div>
+</body>
+
+</html>

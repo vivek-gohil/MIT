@@ -1,0 +1,11 @@
+Project requirements
+Develop a Student Management application that displays student records.
+
+Features:
+1. Display student details.
+2. Display all students using ng-repeat.
+3. Search students using filter.
+4. Sort students using orderBy.
+5. Display student count.
+6. Show or hide student information.
+7. Display student marks with conditional formatting.

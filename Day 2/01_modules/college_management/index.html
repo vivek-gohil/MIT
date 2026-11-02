@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>College Management System</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <!-- Load dependent modules first -->
+    <script src="student.js"></script>
+    <script src="employee.js"></script>
+    <!-- Load main module -->
+    <script src="college.js"></script>
+
+</head>
+
+<body ng-app="collegeApp">
+    <h1>College Management System</h1>
+    <hr>
+    <!-- Student Module Controller -->
+    <div ng-controller="StudentController">
+        <h2>Student Information</h2>
+        <p>ID: {{student.id}}</p>
+        <p>Name: {{student.name}}</p>
+        <p>Age: {{student.age}}</p>
+        <p>Course: {{student.course}}</p>
+    </div>
+    <hr>
+    <!-- Employee Module Controller -->
+    <div ng-controller="EmployeeController">
+        <h2>Employee Information</h2>
+        <p>ID: {{employee.id}}</p>
+        <p>Name: {{employee.name}}</p>
+        <p>Department: {{employee.department}}</p>
+        <p>Salary: {{employee.salary}}</p>
+    </div>
+</body>
+</html>
