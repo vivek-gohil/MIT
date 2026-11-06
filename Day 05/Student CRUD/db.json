@@ -1,0 +1,20 @@
+{
+    "students": [
+        {
+            "name": "HarKishan",
+            "email": "harkishan@gmail.com",
+            "age": 19,
+            "course": "AIML",
+            "studentId": 123456789,
+            "id": "Aw23213aae"
+        },
+        {
+            "name": "Gagan",
+            "email": "gagan@gmail.com",
+            "age": 19,
+            "course": "AIML",
+            "studentId": 1234567899,
+            "id": "A3223213bab"
+        }
+    ]
+}

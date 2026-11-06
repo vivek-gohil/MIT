@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTTP Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="myController">
+        <h2>All Users Received From API - Using HTTP Service</h2>
+        <table border="1">
+            <tr>
+               <th>Id</th> 
+               <th>Name</th>
+               <th>User Name</th>
+               <th>Email</th>
+            </tr>
+            <tr ng-repeat="user in users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

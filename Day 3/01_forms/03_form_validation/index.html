@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="studentController">
+        <form name="studentForm">
+            Student Name 
+            <input type="text" 
+                name="studentName"
+                ng-model="student.name"
+                required
+                minlength="3">
+            <br>
+            <span style="color:red" 
+            ng-show="studentForm.studentName.$touched && 
+                     studentForm.studentName.$error.required" >
+                Student name is required.
+            </span> 
+            <br>   
+            <span style="color:red" 
+            ng-show="studentForm.studentName.$touched && 
+                     studentForm.studentName.$error.minlength" >
+                Name must contain at least 3 characters.
+            </span> 
+            Student Email  
+            <input type="email" 
+                name="email"
+                ng-model="student.email"
+                required>
+            <br>
+            <span style="color:red" 
+            ng-show="studentForm.email.$touched && 
+                     studentForm.email.$error.required" >
+                Student email is required.
+            </span> 
+            <br>   
+            <span style="color:red" 
+            ng-show="studentForm.email.$touched && 
+                     studentForm.email.$error.email" >
+                Enter valid email address
+            </span>  
+            <br>  
+            Student Age  
+            <input type="number" 
+                name="age"
+                ng-model="student.age"
+                required
+                min="18"
+                max="30"
+                > 
+            <br>
+            <span style="color:red" 
+            ng-show="studentForm.age.$touched && 
+                     studentForm.age.$error.required" >
+                Student age is required.
+            </span> 
+            <br>   
+            <span style="color:red" 
+            ng-show="studentForm.age.$touched && 
+                     studentForm.age.$invalid" >
+                Age must be betweem 18 and 30
+            </span>  
+            <br>  
+            <button ng-click="registerStudent()" ng-disabled="studentForm.$invalid">Register</button>
+        </form>
+    </div>
+</body>
+
+</html>

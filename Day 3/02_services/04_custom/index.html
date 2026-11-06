@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body ng-app="studentApp">
+    <div ng-controller="studentController">
+        <h2>Student Management</h2>
+        <h3>Add New Student</h3>
+        <form>
+            Name : <input type="text" ng-model="student.name">
+            <br><br>
+            Age : <input type="number" ng-model="student.age">
+            <br><br>
+            <button ng-click="addNew()">Add New Student</button>
+        </form>
+        <hr>
+        <h3>All Students</h3>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            <tr ng-repeat="student in students">
+                <td>{{student.name}}</td>
+                <td>{{student.age}}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

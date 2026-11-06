@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Student Form</title>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="studentController">
+        <h2>Student Registration Form</h2>
+        <form name="studentForm">
+            Student Name <input type="text" name="studentName" ng-model="student.name">
+            <br><br>
+            <h3>Form States</h3>
+            <p>Form Valid : {{studentForm.$valid}}</p>
+            <p>Form Invalid : {{studentForm.$invalid}}</p>
+            <p>Form Dirty : {{studentForm.$dirty}}</p>
+            <p>Form Pristine : {{studentForm.$pristine}}</p>
+
+            <br><br>
+            <h3>Student Name Field States</h3>
+            <p>Input Valid : {{studentForm.studentName.$valid}}</p>
+            <p>Input Invalid : {{studentForm.studentName.$invalid}}</p>
+            <p>Input Dirty : {{studentForm.studentName.$dirty}}</p>
+            <p>Input Pristine : {{studentForm.studentName.$pristine}}</p>
+            <p>Input Touched : {{studentForm.studentName.$touched}}</p>
+            <p>Input Untoched : {{studentForm.studentName.$untouched}}</p>
+        </form>
+    </div>
+</body>
+
+</html>

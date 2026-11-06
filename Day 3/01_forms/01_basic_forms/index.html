@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular.min.js"></script>
+    <script src="app.js"></script>
+    <title>Student Form</title>
+</head>
+
+<body ng-app="myApp">
+    <div ng-controller="studentController">
+        <h2>Student Registration Form</h2>
+        <form>
+            Student Name <input type="text" ng-model="student.name">
+            <br><br>
+            Email <input type="email" ng-model="student.email">
+            <br><br>
+            Age <input type="number" ng-model="student.age">
+            <br><br>
+            <button ng-click="registerStudent()">Register</button>
+        </form>
+    </div>
+</body>
+
+</html>
